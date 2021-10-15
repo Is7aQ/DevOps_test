@@ -56,9 +56,80 @@ $ kubectl cluster-info
 ##########
 I used Katacoda sence my linux machine didn't meet the requirments.
 
-
-
 ##########
+
+
+We need to containrize the nodejs app so we do the following:
+
+$ git init
+
+$ git clone https://github.com/johnpapa/node-hello
+
+we use the Dockerfile and build an image using:
+
+$ docker build -t test .
+
+to check images:
+
+$ docker images
+
+to connect to the remote hub:
+
+$ docker login 
+
+and use credentials to connect 
+
+
+we tag the image:
+$ docker tag test is7aq/node-hello:latest
+
+
+we push it to the repo:
+$ docker push is7aq/node-hello:latest
+
+
+
+=====================================
+now we have an image that contains our nodejs app 
+
+
+
+To deploy the database stateful set I used mongodb-statefulset.yaml with this command:
+
+$ kubectl apply -f mongodb-statefulset.yaml 
+
+to check:
+
+Kubectl get all 
+
+
+
+To deploy the a basic nodejs app I used deployment.yaml with this command:
+
+$ kubectl apply -f deployment.yaml
+
+to check:
+
+Kubectl get all 
+
+
+++++++++++++++++++++++++
+
+
+For Task #2: 
+
+update packeges:
+
+sudo apt update
+
+install ansible:
+sudo apt install -y ansible
+
+Use the playbook:
+vi playbook.yml
+
+and run the playbook:
+ansible-playbook playbook.yml
 
 
 
