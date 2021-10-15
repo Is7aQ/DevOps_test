@@ -132,12 +132,15 @@ update packeges:
 $ sudo apt update
 
 install ansible:
+
 $ sudo apt install -y ansible
 
 Use the playbook:
+
 $ vi playbook.yml
 
 and run the playbook:
+
 $ ansible-playbook playbook.yml
 
 
