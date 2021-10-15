@@ -1,0 +1,35 @@
+---
+- name: Deploy Nginx and PHP7.4
+  hosts: localhost
+  become: true
+
+  tasks:
+
+  - name: add the ondrej/php PPA which provides all the latest releases of PHP and update packages
+    apt_repository:
+      repo: ppa:ondrej/php
+      state: present
+      update_cache: yes
+  
+  - name: Install Nginx
+    apt:
+      name: nginx 
+      state: latest
+
+  - name: Install php7.4
+    apt:
+      name: php7.4-fpm
+      state: present 
+
+  - name: Restart Nginx and enable upon reboot
+    service:
+      name: nginx
+      state: restarted
+      enabled: yes      
+
+    
+  - name: Restart php and enable upon reboot 
+    service:
+      name: php7.4-fpm 
+      state: restarted
+      enabled: yes
