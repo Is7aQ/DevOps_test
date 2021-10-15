@@ -38,7 +38,7 @@ Move the binary in to your PATH:
 sudo mv ./kubectl /usr/local/bin/kubectl
 
 Check version:
-# kubectl version -o json 
+$ kubectl version -o json 
 
 
 Step 5: Starting minikube
