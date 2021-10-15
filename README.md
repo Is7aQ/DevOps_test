@@ -102,6 +102,7 @@ $ docker push is7aq/node-hello:latest
 
 
 =====================================
+
 now we have an image that contains our nodejs app 
 
 
@@ -112,7 +113,7 @@ $ kubectl apply -f mongodb-statefulset.yaml
 
 to check:
 
-Kubectl get all 
+$ Kubectl get all 
 
 
 
@@ -122,7 +123,7 @@ $ kubectl apply -f deployment.yaml
 
 to check:
 
-Kubectl get all 
+$ Kubectl get all 
 
 
 ++++++++++++++++++++++++
