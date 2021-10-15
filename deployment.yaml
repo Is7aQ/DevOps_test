@@ -4,7 +4,7 @@ metadata:
   name: nodejs-app-service
 spec:
   selector:
-    app: nodejs-app
+    app: nodejs-app  #a service for our app
   ports:
   - protocol: "TCP"
     port: 3000
@@ -15,12 +15,12 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-app
+  name: nodejs-app  #a deployment for our app
 spec:
   selector:
     matchLabels:
       app: nodejs-app
-  replicas: 2
+  replicas: 2  #Number of replicas are 2 
   template:
     metadata:
       labels:
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: is7aq/node-hello
+        image: is7aq/node-hello  #using the image we uploaded
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
