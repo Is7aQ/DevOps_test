@@ -24,7 +24,9 @@ Step 3: Download minikube
 
 
 $ wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
 $ chmod +x minikube-linux-amd64
+
 $ sudo mv minikube-linux-amd64 /usr/local/bin/minikube
 
 
@@ -46,6 +48,7 @@ Move the binary in to your PATH:
 $ sudo mv ./kubectl /usr/local/bin/kubectl
 
 Check version:
+
 $ kubectl version -o json 
 
 
@@ -125,6 +128,14 @@ to check:
 
 $ Kubectl get all 
 
+we can check the app service using:
+
+$ minikube service nodejs-app-service
+
+
+Also we can Curl the service URL to check it, the result should be:
+
+Hello Node!
 
 ++++++++++++++++++++++++
 
